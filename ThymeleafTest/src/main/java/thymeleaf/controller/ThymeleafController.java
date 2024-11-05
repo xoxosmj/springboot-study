@@ -1,0 +1,10 @@
+package thymeleaf.controller;
+
+import org.springframework.stereotype.Controller;
+
+@Controller
+public class ThymeleafController {
+    public ThymeleafController() {
+        System.out.println("ThymeleafController 생성자");
+    }
+}
