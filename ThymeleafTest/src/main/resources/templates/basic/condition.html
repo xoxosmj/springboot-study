@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">-
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        table {
+            padding: 5px;
+            border-collapse: collapse;
+        }
+
+        td {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<h1>if,unless</h1>
+<table border="1">
+    <tr>
+        <th width="50">count</th>
+        <th width="100">이름</th>
+        <th width="100">나이</th>
+        <!--<th width="70">성인</th>-->
+    </tr>
+
+    <tr th:each="dto,dtoStat : ${list}">
+        <td th:text="${dtoStat.count}">1</td>
+        <td th:text="${dto.name}">name</td>
+        <!--        <td th:text="${dto.age}">age</td>-->
+        <!--        <td th:if="${dto.age}>19">성인</td>-->
+        <!--        <td th:if="${dto.age}<19">청소년</td>-->
+
+        <td>
+            <span th:text="${dto.age}">0</span>
+            <span th:text="'성인'" th:if="${dto.age>=19}"></span>
+            <span th:text="'청소년'" th:unless="${dto.age>=19}"></span>
+        </td>
+    </tr>
+</table>
+
+<h1>switch</h1>
+<table border="1">
+    <tr>
+        <th width="50">count</th>
+        <th width="100">이름</th>
+        <th width="100">나이</th>
+    </tr>
+
+    <tr th:each="dto,dtoStat : ${list}">
+        <td th:text="${dtoStat.count}">1</td>
+        <td th:text="${dto.name}">name</td>
+        <!--        스위치는 조건문이 아니라서 >,<,= 이 불가능?-->
+        <td th:switch="${dto.age}">
+            <span th:case="25">20대</span>
+            <span th:case="17">10대</span>
+            <span th:case="*">30대 이상</span>
+            <!--            * 는 default의 역할-->
+        </td>
+    </tr>
+</table>
+
+</body>
+</html>
