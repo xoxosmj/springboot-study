@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>표현식 기본 객체(Expression Basic Objects)</h1>
+<ul>
+    <li>locale = <span th:text="${#locale}">현재 요청의 언어 및 지역정보를 가져온다.</span></li>
+</ul>
+
+<hr>
+<h1>편의 객체</h1>
+<ul>
+    <li>Request Parameter = <span th:text="${param.paramData}"></span></li>
+    <li>spring bean = <span th:text="${@helloTest.hello('Spring Boot!')}"></span></li>
+    <!--/*
+    ${@   } 기호는 스프링 빈을 참조한다.
+    스프링 애플리케이션 컨텍스트에 등록한 빈의 이름이다
+    @Component, @Service, @Repository, @Bean 등등등
+    helloTest 빈의 hello 메서드를 호출하고, 결과를 템플릿에 출력한다.
+    */-->
+</ul>
+
+<hr>
+[[${now}]]<br>
+[[${#temporals.format(now, 'yyyy-MM-dd hh:mm:ss')}]]<br>
+[[${#temporals.format(now, 'yyyy년 MM월 dd일 hh시 mm분')}]]<br>
+<!--/*
+타임리프에서 [[ ]] 는 표현식(Expression)을 나타내는 구문이다.
+[[ ]] 안에 작성된 내용은 변수나 표현식을 평가하여 결과를 html에 삽입하는데 사용된다.
+*/-->
+
+<hr>
+[[${#dates}]] <br>
+[[${#dates.createNow()}]] <br>
+[[${#dates.createToday()}]] <br>
+[[${#dates.format(#dates.createNow(), 'yyyy/MM/dd HH:mm')}]] <br>
+[[${#dates.format(#dates.createNow(), 'yyyy년 MMM d일')}]] <br>
+[[${#dates.format(#dates.createNow(), 'HH:mm:ss')}]] <br>
+[[${#dates.format(#dates.createNow(), 'ddd dd d')}]] <br>
+[[${#dates.format(#dates.createNow(), 'ddd dd d')}]] <br>
+[[${#calendars.dayOfWeekName(#dates.createNow())}]] <br>
+<!--/*
+Thymeleaf가 제공하는 내장 함수로, 현재 시각이나 날짜를 표현, #dates 및 #calendars 유틸리티
+*/-->
+
+<hr>
+[[${#strings}]]<br>
+[[${#strings.isEmpty(param.name)}]]<br>
+[[${#strings.isEmpty(now)}]]<br>
+[[${#strings.isEmpty(str)}]]<br>
+[[${#strings.length(str)}]]<br>
+[[${#strings.toLowerCase(str)}]]<br>
+[[${str}]]<br>
+[[${#strings.trim(str)}]]<br>
+<!--/*
+Thymeleaf에서 [[strings]]는 특정 문자열이나 변수의 값을 출력 할 때 사용되는 표현식
+*/-->
+
+<hr>
+[[${param}]]<br>
+[[${param.size()}]]<br>
+[[${param.isEmpty()}]]<br>
+
+<hr>
+[[${session}]]<br>
+[[${session.memId}]]<br>
+[[${session.size()}]]<br>
+[[${session.isEmpty()}]]<br>
+[[${session.keySet()}]]<br>
+
+</body>
+</html>
