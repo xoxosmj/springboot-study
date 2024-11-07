@@ -2,6 +2,7 @@ package user.service.impl;
 
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import user.bean.UserDTO;
 import user.dao.UserDAO;
 import user.service.UserService;
 
@@ -17,6 +18,17 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public String getExistId(String id) {
-        return "";
+        UserDTO userDTO = userDAO.getExistId(id);
+        System.out.println(userDTO);
+
+        if (userDTO != null) {
+            return "exist";
+        } else return "non_exist";
+    }
+
+    @Override
+    public void write(UserDTO userDTO) {
+        System.out.println(userDTO);
+        userDAO.write(userDTO);
     }
 }

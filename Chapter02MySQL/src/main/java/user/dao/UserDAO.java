@@ -1,8 +1,11 @@
 package user.dao;
 
 import org.apache.ibatis.annotations.Mapper;
+import user.bean.UserDTO;
 
 @Mapper
 public interface UserDAO {
+    public UserDTO getExistId(String id);
 
+    public void write(UserDTO userDTO);
 }

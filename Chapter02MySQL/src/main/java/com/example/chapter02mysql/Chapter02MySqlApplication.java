@@ -8,10 +8,11 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
-@ComponentScan(basePackages = {"user.controller","user.service","user.dao"})
+@ComponentScan(basePackages = {"user.controller","user.service","user.service.impl"})
 @EnableTransactionManagement
-@MapperScan("user.dao") //왓??
-@SpringBootApplication(exclude = {DataSourceAutoConfiguration.class})
+@MapperScan("user.dao")
+//@SpringBootApplication(exclude = {DataSourceAutoConfiguration.class})
+@SpringBootApplication
 public class Chapter02MySqlApplication {
 
     public static void main(String[] args) {

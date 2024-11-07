@@ -2,36 +2,19 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="../../static/css/write.css">
+    <link rel="stylesheet" href="/css/write.css">
     <title>회원가입</title>
 </head>
 <body>
 <div id="write-jsp">
-    <%-- <div id="left">
-    <div id="header">
-        <a href="/spring/">
-            <img src="../image/alarm_logo.png" alt="logo" width="50" height="50" />
-            HOME
-        </a>
-    </div>
-    <div id="profile">
-        <img src="${pageContext.request.contextPath}/resources/image/mangom3.png" width="140" height="140" alt="mangom" />
-        <img src="../image/mangom3.png" width="140" height="140" alt="mangom" />
-    </div>
-    <div id="links">
-        <a id="logOutBtn" href="${context }/member/memberLogOut.do">로그아웃</a> |
-        <a href="#">고객센터</a> |
-        <a href="#">한국어</a>
-    </div>
-</div> --%>
-
     <div id="right">
-        <a href="/spring/">
-            <img src="../../../../../../../../SpringBoot/workspace/SpringBoot/Chapter02MySQL/src/main/resources/static/image/mangom3.png" width="130" height="140" alt="mangom" />
+        <a href="/">
+            <img src="/image/mangom3.png" width="130" height="140" alt="mangom" />
         </a>
         <div id="container">
             <div id="edit-header">회원가입</div>
             <form name="userWriteForm" id="userWriteForm">
+
                 <table>
                     <tr>
                         <th class="label">이름</th>
@@ -66,11 +49,25 @@
     </div>
 </div>
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-<script type="text/javascript" src="../../static/js/write.js"></script>
+<!--<script type="text/javascript" src="/js/write.js"></script>-->
+<script type="text/javascript">
+$(function (){
+    //등록
+    $('#writeBtn').click(function (){
+        $('#nameDiv').empty();
+        $('#idDiv').empty();
+        $('#pwdDiv').empty();
+
+        if($('#name').val() == '')
+            $('#nameDiv').html('이름 입력');
+        else if($('#id').val() == '')
+            $('#idDiv').html('아이디 입력');
+        else if($('#pwd').val() == '')
+            $('#pwdDiv').html('비밀번호 입력');
+        else
+
+    })
+})
+</script>
 </body>
 </html>
-
-
-
-
-
