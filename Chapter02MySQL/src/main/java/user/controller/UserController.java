@@ -59,9 +59,11 @@ public class UserController {
         return "user/loginForm";
     }
 
-    @GetMapping("login")
-    public String login() {
-        return "user/list";
+    @PostMapping("login")
+    @ResponseBody
+    public void login(@ModelAttribute UserDTO userDTO) {
+        System.out.println(userDTO);
+        userService.login(userDTO);
     }
 
     @GetMapping("logout")

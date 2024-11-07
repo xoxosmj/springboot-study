@@ -10,4 +10,6 @@ public interface UserService {
     public void write(UserDTO userDTO);
 
     List<UserDTO> getAllUsers();
+
+    void login(UserDTO userDTO);
 }

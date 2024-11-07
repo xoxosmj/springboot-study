@@ -42,5 +42,12 @@ public class UserServiceImpl implements UserService {
 
     }
 
+    @Override
+    public void login(UserDTO userDTO) {
+        System.out.println("impl 로그인메서드");
+        System.out.println(userDTO);
+
+    }
+
 
 }
