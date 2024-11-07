@@ -6,6 +6,10 @@ import user.bean.UserDTO;
 import user.dao.UserDAO;
 import user.service.UserService;
 
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+import java.util.List;
+
 @Service
 @Transactional
 public class UserServiceImpl implements UserService {
@@ -31,4 +35,12 @@ public class UserServiceImpl implements UserService {
         System.out.println(userDTO);
         userDAO.write(userDTO);
     }
+
+    @Override
+    public List<UserDTO> getAllUsers() {
+        return userDAO.list();
+
+    }
+
+
 }

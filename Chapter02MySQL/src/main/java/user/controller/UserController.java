@@ -1,9 +1,12 @@
 package user.controller;
 
+import org.springframework.ui.Model;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import user.bean.UserDTO;
 import user.service.UserService;
+
+import java.util.List;
 
 @RequestMapping("user")
 @Controller
@@ -45,10 +48,10 @@ public class UserController {
     }
 
     @GetMapping("list")
-    public String list() {
-        System.out.println("list");
-
-        return null;
+    public String list(Model model) {
+        List<UserDTO> userList = userService.getAllUsers(); // DB에서 유저 리스트 가져오기
+        model.addAttribute("userList", userList); // HTML로 전달할 데이터 설정
+        return "user/list"; // user/list.html 템플릿으로 이동
     }
 }
 

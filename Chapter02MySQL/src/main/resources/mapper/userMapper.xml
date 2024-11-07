@@ -16,7 +16,7 @@
     </insert>
 
     <select id="list" resultType="userDTO">
-        select * from usertable limit #{startNum}, #{endNum}
+        select * from usertable
     </select>
 
     <select id="getTotalA" resultType="int">
