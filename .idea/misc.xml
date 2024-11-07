@@ -3,6 +3,7 @@
   <component name="ExternalStorageConfigurationManager" enabled="true" />
   <component name="FrameworkDetectionExcludesConfiguration">
     <file type="web" url="file://$PROJECT_DIR$/Chapter01HelloGradle" />
+    <file type="web" url="file://$PROJECT_DIR$/Chapter02MySQL" />
     <file type="web" url="file://$PROJECT_DIR$/ThymeleafTest" />
   </component>
   <component name="ProjectRootManager">

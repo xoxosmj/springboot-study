@@ -2,7 +2,10 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Chapter01HelloGradle.main.iml" filepath="$PROJECT_DIR$/.idea/modules/Chapter01HelloGradle.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Chapter02MySQL.main.iml" filepath="$PROJECT_DIR$/.idea/modules/Chapter02MySQL.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/SpringBoot.iml" filepath="$PROJECT_DIR$/SpringBoot.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/ThymeleafTest.main.iml" filepath="$PROJECT_DIR$/.idea/modules/ThymeleafTest.main.iml" />
     </modules>
   </component>
 </project>
