@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="/css/write.css">
@@ -13,9 +13,10 @@
         </a>
         <div id="container">
             <div id="edit-header">회원가입</div>
-            <form name="userWriteForm" id="userWriteForm">
+<!--            <form name="userWriteForm" id="userWriteForm">-->
+            <form id="userWriteForm" method="post" th:action="@{/user/write2}">
 
-                <table>
+            <table>
                     <tr>
                         <th class="label">이름</th>
                         <td class="input">
@@ -49,25 +50,30 @@
     </div>
 </div>
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-<!--<script type="text/javascript" src="/js/write.js"></script>-->
+<!-- <script type="text/javascript" src="/js/write.js"></script> -->
 <script type="text/javascript">
-$(function (){
-    //등록
-    $('#writeBtn').click(function (){
-        $('#nameDiv').empty();
-        $('#idDiv').empty();
-        $('#pwdDiv').empty();
+    $(function(){
+        $('#writeBtn').click(function(){
+            $('#nameDiv').empty();
+            $('#idDiv').empty();
+            $('#pwdDiv').empty();
 
-        if($('#name').val() == '')
-            $('#nameDiv').html('이름 입력');
-        else if($('#id').val() == '')
-            $('#idDiv').html('아이디 입력');
-        else if($('#pwd').val() == '')
-            $('#pwdDiv').html('비밀번호 입력');
-        else
-
-    })
-})
+            if($('#id').val() == '') {
+                $('#idDiv').html('아이디 입력');
+                $('#id').focus();
+            }
+            else if($('#name').val() == '') {
+                $('#nameDiv').html('이름 입력');
+                $('#name').focus();
+            }
+            else if($('#pwd').val() == '') {
+                $('#pwdDiv').html('비밀번호 입력');
+                $('#pwd').focus();
+            }else {
+                $('#userWriteForm').submit();
+            }
+        });
+    });
 </script>
 </body>
 </html>
