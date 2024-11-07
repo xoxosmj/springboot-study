@@ -53,6 +53,26 @@ public class UserController {
         model.addAttribute("userList", userList); // HTML로 전달할 데이터 설정
         return "user/list"; // user/list.html 템플릿으로 이동
     }
+
+    @GetMapping("loginForm")
+    public String loginForm() {
+        return "user/loginForm";
+    }
+
+    @GetMapping("login")
+    public String login() {
+        return "user/list";
+    }
+
+    @GetMapping("logout")
+    public String logout() {
+        return "user/logout";
+    }
+
+    @GetMapping("update")
+    public String update() {
+        return "user/update";
+    }
 }
 
 

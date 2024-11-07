@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>회원 목록</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -79,13 +79,15 @@
     <table>
         <thead>
         <tr>
+            <th>번호</th>
             <th>이름</th>
             <th>아이디</th>
             <th>비밀번호</th>
         </tr>
         </thead>
         <tbody>
-        <tr th:each="user:${userList}">
+        <tr th:each="user, idx:${userList}">
+            <td th:text="${idx.index+1}"}></td>
             <td th:text="${user.name}"></td>
             <td th:text="${user.id}"></td>
             <td th:text="${user.pwd}"></td>
