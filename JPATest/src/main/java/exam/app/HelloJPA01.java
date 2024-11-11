@@ -18,9 +18,6 @@ public class HelloJPA01 {
         manager.close();
         factory.close();
 
-        EntityTestApp01 app01 = new EntityTestApp01();
-        app01.run();
     }
-
 
 }
