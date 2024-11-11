@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/Chapter01HelloGradle.main.iml" filepath="$PROJECT_DIR$/.idea/modules/Chapter01HelloGradle.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/Chapter02MySQL.main.iml" filepath="$PROJECT_DIR$/.idea/modules/Chapter02MySQL.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/JPATest.main.iml" filepath="$PROJECT_DIR$/.idea/modules/JPATest.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/SpringBoot.iml" filepath="$PROJECT_DIR$/SpringBoot.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/ThymeleafTest.main.iml" filepath="$PROJECT_DIR$/.idea/modules/ThymeleafTest.main.iml" />
     </modules>
