@@ -49,6 +49,8 @@ public class EntityTestApp03 {
         list.stream().forEach(e -> System.out.println(e)); // forEach 첫번째 방법
         list.stream().forEach(System.out::println); // forEach 두번째 방법
 
+        System.out.println("블라블라 이거도깨지나");
+
         em.close();
         factory.close();
 
