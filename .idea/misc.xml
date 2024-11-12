@@ -4,6 +4,7 @@
   <component name="FrameworkDetectionExcludesConfiguration">
     <file type="web" url="file://$PROJECT_DIR$/Chapter01HelloGradle" />
     <file type="web" url="file://$PROJECT_DIR$/Chapter02MySQL" />
+    <file type="web" url="file://$PROJECT_DIR$/Chapter03JPA" />
     <file type="web" url="file://$PROJECT_DIR$/JPATest" />
     <file type="web" url="file://$PROJECT_DIR$/test" />
     <file type="web" url="file://$PROJECT_DIR$/ThymeleafTest" />

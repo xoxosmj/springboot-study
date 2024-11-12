@@ -12,7 +12,11 @@
         <class>exam.entity.EntityTest02</class>
         <class>exam.entity.EntityTest03</class>
         <class>exam.entity.EntityTest04</class>
+        <class>exam.entity.EntityTest05</class>
         <class>exam.entity.Person</class>
+        <class>exam.entity.Team</class>
+        <class>exam.entity.Locations</class>
+        <class>exam.entity.Emp</class>
 
         <properties>
             <property name="jakarta.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver"/>
@@ -28,7 +32,7 @@
             <property name="hibernate.use_sql_comments" value="true"/>
 
             <!--업데이트 혹은 크리에이트가 온다-->
-            <property name="hibernate.hbm2ddl.auto" value="create"/>
+            <property name="hibernate.hbm2ddl.auto" value="update"/>
         </properties>
     </persistence-unit>
 </persistence>
