@@ -8,7 +8,7 @@ import jakarta.persistence.Query;
 import java.util.List;
 
 public class HelloJPA03 {
-
+/* 몰라 레후
     public static void main(String[] args) throws InterruptedException {
         EntityManagerFactory factory = Persistence.createEntityManagerFactory("entitytest");
         EntityManager em = factory.createEntityManager();
@@ -23,5 +23,5 @@ public class HelloJPA03 {
             if(emp.getDeptno() != null)
                 System.out.println("부서명 : "+emp.getDeptno().getDname());
         }
-    }
+    }*/
 }
