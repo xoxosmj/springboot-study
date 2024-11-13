@@ -89,7 +89,7 @@ public class JPA_BoardRepositoryTest2 {
     //seq의값이 2보다 크고 5보다 작은값을 조회하시오
     @Test
     public void bySeqBetween() {
-        List<BoardEntity> list = boardDAO.findBySeqBetween(2,5);
+        List<BoardEntity> list = boardDAO.findBySeqBetween(2, 5);
         for (BoardEntity boardEntity : list) {
             System.out.println(boardEntity);
         }
@@ -124,7 +124,7 @@ public class JPA_BoardRepositoryTest2 {
         //List<BoardEntity> list = boardDAO.findByLogtimeAfter(java.sql.Date.valueOf("2024-11-12");
 
         //BoardEntity 에서 private LocalDateTime logtime = LocalDateTime.now(); 설정했을때
-        List<BoardEntity> list = boardDAO.findByLogtimeAfter(LocalDateTime.of(24,11,12,00,00,00));
+        List<BoardEntity> list = boardDAO.findByLogtimeAfter(LocalDateTime.of(24, 11, 12, 00, 00, 00));
         for (BoardEntity boardEntity : list) {
             System.out.println(boardEntity);
         }

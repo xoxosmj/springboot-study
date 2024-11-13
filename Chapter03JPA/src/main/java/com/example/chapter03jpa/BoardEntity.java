@@ -7,29 +7,29 @@ import org.hibernate.annotations.UpdateTimestamp;
 import java.time.LocalDateTime;
 
 @Entity
-@Table(name="boardtbl")
+@Table(name = "boardtbl")
 @Data
 public class BoardEntity {
 
     @Id
-    @Column(name="seq")
+    @Column(name = "seq")
 //    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "BOARD_SEQ_GENERATOR")
-    @GeneratedValue(strategy=GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int seq;
 
-    @Column(name="id", nullable= false,length = 30)
+    @Column(name = "id", nullable = false, length = 30)
     private String id;
 
 
-    @Column(name="name", nullable= false,length = 30)
+    @Column(name = "name", nullable = false, length = 30)
     private String name;
 
 
-    @Column(name="subject")
+    @Column(name = "subject")
     private String subject;
 
 
-    @Column(name="content")
+    @Column(name = "content")
     private String content;
 
     @UpdateTimestamp // update 할때 자동으로 시간 등록

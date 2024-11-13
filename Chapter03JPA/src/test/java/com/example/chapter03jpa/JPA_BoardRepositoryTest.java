@@ -33,43 +33,43 @@ public class JPA_BoardRepositoryTest {
     }
 
     @Test
-    public void list1(){
+    public void list1() {
         List<BoardEntity> list = boardDAO.findAll();
         list.stream().forEach(System.out::println); // 설명필요 안외워짐
 
     }
 
     @Test
-    public void list2(){
+    public void list2() {
         List<BoardEntity> list = boardDAO.findAll(Sort.by("name").ascending()); //정렬추가
         list.stream().forEach(System.out::println);
 
     }
 
     @Test
-    public void list3(){
+    public void list3() {
         List<BoardEntity> list = boardDAO.findAll(Sort.by("name").descending()); //정렬추가
         list.stream().forEach(System.out::println);
 
     }
 
     @Test
-    public void list4(){
-        Page<BoardEntity> list = boardDAO.findAll(PageRequest.of(0,3));
+    public void list4() {
+        Page<BoardEntity> list = boardDAO.findAll(PageRequest.of(0, 3));
         list.stream().forEach(System.out::println);
 
     }
 
     @Test
-    public void list5(){
-        Page<BoardEntity> list = boardDAO.findAll( PageRequest.of(1,3));
+    public void list5() {
+        Page<BoardEntity> list = boardDAO.findAll(PageRequest.of(1, 3));
         list.stream().forEach(System.out::println);
 
     }
 
     @Test
-    public void list6(){
-        Page<BoardEntity> list = boardDAO.findAll(PageRequest.of(0,3, Sort.by("name")));
+    public void list6() {
+        Page<BoardEntity> list = boardDAO.findAll(PageRequest.of(0, 3, Sort.by("name")));
         list.stream().forEach(System.out::println);
 
     }
