@@ -19,4 +19,6 @@ public interface BoardDAO extends JpaRepository<BoardEntity, Integer> {
     List<BoardEntity> findByLogtimeAfter(LocalDateTime of);
 
     List<BoardEntity> findBySeqBetween(int i, int i1);
+
+    List<BoardEntity> findAllByOrderBySeqDesc();
 }
