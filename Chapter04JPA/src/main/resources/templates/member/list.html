@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="/css/list.css">
+
+</head>
+<body>
+<div class="container">
+    <table border="1">
+        <tr>
+            <th>번호</th>
+            <th>아이디</th>
+            <th>비밀번호</th>
+            <th>이름</th>
+        </tr>
+
+        <tr th:each="dto :  ${map.list}">
+            <td th:text="${dto.seq}"></td>
+            <td th:text="${dto.id}"></td>
+            <td th:text="${dto.pwd}"></td>
+            <td th:text="${dto.name}"></td>
+        </tr>
+    </table>
+    <div id="memberPagingDiv" th:utext="${map.memberPaging.pagingHTML}"></div>
+</div>
+</body>
+
+<script type="text/javascript">
+    function memberPaging(page) {
+        location.href = "/member/list?page=" + (page - 1);
+    }
+</script>
+
+</html>

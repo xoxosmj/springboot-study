@@ -52,6 +52,7 @@ $(function () {
                 data: $('#registerForm').serialize(),
                 success: function() {
                     alert('회원가입 완료');
+                    location.href = '/member/list';
                 },
                 error: function(e) {
                     console.log(e);
