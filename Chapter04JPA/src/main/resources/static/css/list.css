@@ -1,53 +1,10 @@
-body {
-    font-family: Arial, sans-serif;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
-    background-color: #f4f4f9;
-}
+@import url('common.css'); /* 공통 스타일 가져오기 */
 
-table {
-    width: 80%;
-    max-width: 800px;
-    margin: 20px auto;
-    border-collapse: collapse;
-    background-color: #ffffff;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-}
-
-th, td {
-    padding: 12px 15px;
-    text-align: left;
-    border-bottom: 1px solid #ddd;
-}
-
-th {
-    background-color: #4CAF50;
-    color: white;
-    font-weight: bold;
-}
-
-tr:hover {
-    background-color: #f1f1f1;
-}
-
-td {
-    color: #333;
-}
-
-tr:last-child td {
-    border-bottom: none;
-}
-
-/* 페이징 스타일 */
 #memberPagingDiv {
-    width: 100%; /* 전체 너비 사용 */
-    text-align: center; /* 중앙 정렬 */
+    width: 100%;
+    text-align: center;
     margin-top: 20px;
-    display: inline-block; /* 블록 요소로 설정하여 중앙에 배치 */
+    display: inline-block;
 }
 
 #memberPagingDiv span {

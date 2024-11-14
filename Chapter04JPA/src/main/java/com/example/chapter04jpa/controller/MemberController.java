@@ -5,14 +5,10 @@ import com.example.chapter04jpa.entity.MemberEntity;
 import com.example.chapter04jpa.service.MemberService;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
-import org.springframework.data.domain.Sort;
 import org.springframework.data.web.PageableDefault;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.List;
-import java.util.Map;
 
 
 @Controller
@@ -44,15 +40,36 @@ public class MemberController {
         memberService.register(memberDTO);
     }
 
-    //페이징 처리 복습필요
     @GetMapping("list")
-    public String list(@RequestParam(value = "page", required = false, defaultValue = "0") String page,
-                       //pg는 0부터 시작, 0이면 1페이지, 1이면 2페이지,...
-                       @PageableDefault(page = 0, size = 3, sort = "name", direction = Sort.Direction.DESC) Pageable pageable,
-                       Model model) {
-        Map<String, Object> map = memberService.getMemberList(pageable);
+    public String list(Model model, @PageableDefault(page = 0, size = 3) Pageable pageable) {
 
-        model.addAttribute("map", map);
+        Page<MemberEntity> pagedList = memberService.getAllMembers(pageable);
+
+        /*
+        int pageGroupSize = 3;  // 한 번에 보여줄 페이지 버튼 개수
+        int currentPage = pagedList.getNumber();  // 현재 페이지 번호 (0부터 시작)
+        int totalPages = pagedList.getTotalPages();  // 전체 페이지 수
+
+        int startPage = (currentPage / pageGroupSize) * pageGroupSize;  // 현재 그룹의 시작 페이지
+        int endPage = Math.min(startPage + pageGroupSize, totalPages);  // 현재 그룹의 마지막 페이지
+
+        model.addAttribute("startPage", startPage);
+        model.addAttribute("endPage", endPage);
+        */
+
+        model.addAttribute("pagedList", pagedList);
+
         return "member/list";
     }
+
+    @GetMapping("search")
+    public String search(@RequestParam String columnName, @RequestParam String columnValue, Model model,@PageableDefault(page = 0, size = 3) Pageable pageable) {
+        Page<MemberEntity> pagedList = memberService.getSearchedMembers(columnName, columnValue, pageable);
+
+        model.addAttribute("pagedList", pagedList);
+        model.addAttribute("columnName", columnName);
+        model.addAttribute("columnValue", columnValue);
+        return "member/list";
+    }
+
 }

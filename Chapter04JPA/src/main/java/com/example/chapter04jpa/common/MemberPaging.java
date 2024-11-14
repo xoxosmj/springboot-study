@@ -1,3 +1,4 @@
+
 package com.example.chapter04jpa.common;
 
 import lombok.Data;
@@ -6,7 +7,8 @@ import org.springframework.stereotype.Component;
 @Component
 @Data
 public class MemberPaging {
-    private int currentPage;//현재페이지
+    
+/*    private int currentPage;//현재페이지
     private int pageBlock; //[이전][1][2][3][다음]
     private int pageSize; //1페이지당 5개씩
     private int totalA; //총글수
@@ -38,5 +40,6 @@ public class MemberPaging {
             pagingHTML.append("<span id='paging' onclick='memberPaging(" + endPage + ")'>다음</span>");
         }
 
-    }
+    }*/
 }
+
