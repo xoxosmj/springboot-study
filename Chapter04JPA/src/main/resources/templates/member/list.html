@@ -28,11 +28,21 @@
     </table>
 
     <!-- Pagination Controls -->
-    <div>
-        <a th:if="${pagedList.hasPrevious()}" th:href="@{/member/list(page=${pagedList.number - 1})}">이전</a>
-        <span th:text="${pagedList.number + 1}"></span> of <span th:text="${pagedList.totalPages}"></span>
-        <a th:if="${pagedList.hasNext()}" th:href="@{/member/list(page=${pagedList.number + 1})}">다음</a>
-    </div>
+    <!-- 이전 페이지 버튼 -->
+    <a th:if="${pagedList.hasPrevious() and #strings.isEmpty(columnName)}"
+       th:href="@{/member/list(page=${pagedList.number - 1})}">이전</a>
+    <a th:if="${pagedList.hasPrevious() and !#strings.isEmpty(columnName)}"
+       th:href="@{/member/search(columnName=${columnName}, columnValue=${columnValue}, page=${pagedList.number - 1})}">이전</a>
+
+    <!-- 현재 페이지 표시 -->
+    <span th:text="${pagedList.number + 1}"></span> of <span th:text="${pagedList.totalPages}"></span>
+
+    <!-- 다음 페이지 버튼 -->
+    <a th:if="${pagedList.hasNext() and #strings.isEmpty(columnName)}"
+       th:href="@{/member/list(page=${pagedList.number + 1})}">다음</a>
+    <a th:if="${pagedList.hasNext() and !#strings.isEmpty(columnName)}"
+       th:href="@{/member/search(columnName=${columnName}, columnValue=${columnValue}, page=${pagedList.number + 1})}">다음</a>
+
 
     <!-- Search Form -->
     <div>
